@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color1">#ff92ff2f</color>
+    <color name="color2">#ffffbc00</color>
+    <color name="color3">#ff12ffa0</color>
+    <color name="color4">#ffff6724</color>
+
+    <color name="push_subtitle">#666666</color>
+    <color name="push_msg_text">#333333</color>
+    <color name="push_msg_time">#999999</color>
+	<color name="push_list_bg">#eeeeee</color>
+	<color name="push_white">#ffffff</color>
+	<color name="push_red">#ff0000</color>
+	<color name="push_blue">#0000ff</color>
+	<color name="push_div">#dddddd</color>
+
+	<color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+
+    <color name="timestamp">#a0a3a7</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent2">#99000000</color>
+    <color name="black">#ff000000</color>
+    <color name="yellow_kb">#fcaf17</color>
+    <color name="side_menu_button_text">#585045</color>
+    <color name="side_menu_button_text_orange">#fcaf17</color>
+
+</resources>

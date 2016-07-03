@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="info.androidhive.listviewfeed"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+ 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+  	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  	<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+ 	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission android:name="com.sample.ipstest.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.sample.ipstest.permission.C2D_MESSAGE" />
+
+	<uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+
+    <application
+        android:name="info.androidhive.listviewfeed.app.AppController"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+		<service android:name="ib.push.service.MnPushService">
+            <intent-filter>
+				<action android:name="ib.push.service.STOP_SERVICE"/>
+				<action android:name="ib.push.service.START_SERVICE"/>
+				<action android:name="ib.push.service.REGISTER"/>
+				<action android:name="ib.push.service.UNREGISTER"/>
+				<action android:name="ib.push.service.ALM_ALIVE"/>
+			</intent-filter>
+		</service>
+
+        <meta-data android:name="ib.push.service.version" android:value="1.0.0"/>
+
+		<receiver android:name="info.androidhive.listviewfeed.GcmPushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.example.gcm" />
+			</intent-filter>
+		</receiver>
+
+		<meta-data android:name="com.google.android.gms.version" android:value="5077000"/>
+
+        <activity
+            android:name="info.androidhive.listviewfeed.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="info.androidhive.listviewfeed.ShowMsgActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    </application>
+
+</manifest>
